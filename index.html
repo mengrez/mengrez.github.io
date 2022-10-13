@@ -20,20 +20,103 @@
     </head> 
 
     <body>
-    	<div class="header header-fixed bg-teal-500 u-unselectable header-animated">
+    	<div class="header header-fixed bg-blue-900 u-unselectable header-animated">
     		<!-- Header de marca-->
 			<div class="header-brand">
 				<div class="nav-item no-hover">
 					<a id="BrandContainer"><h4  id="BrandTitle" class="title text-light">Uriel Cedeño</h4></a>
 				</div>
 			</div>
+			<div id="navigation_menu_small" class="header-brand" >
+				<div id="dropdown" class="nav-item has-sub toggle-hover">
+					<span class="material-icons" style="margin-top: 12px;">menu</span>
+						<ul class="dropdown-menu dropdown-animated" role="menu" id="drop-small-menu">
+							<li role="menu-item"><a href="#" id="menu1a" class="menuItem">About</a></li>
+							<li role="menu-item"><a href="#" id="menu2a" class="menuItem">Projects</a></li>
+							<li role="menu-item"><a href="#" id="menu3a" class="menuItem">Contact me</a></li>
+						</ul>
+				</div>
+			</div>
+			<!-- Menu de pagina-->
+			<div id="navigation_menu" class="header-nav" >
+				<div class="nav-right">
+					<div class="nav-item selected">
+						<a href="#" id="menu1b" class="menuItem">About</a>
+					</div>
+					<div class="nav-item selected">
+						<a href="#" id="menu2b" class="menuItem">Projects</a>
+					</div>
+					<<div class="nav-item selected">
+						<a href="#" id="menu3b" class="menuItem">Contact me</a>
+					</div>
+				</div>
+			</div>
     	</div> <!--End Header-->
-    	
+    	<!--Toast-->
+		<div id="toasty" class="toast toast--False alarm"><p>Incomplete information!</p></div>
+    	<div id="toasty-mail" class="toast toast--False alarm"><p>Email error!</p></div>
+		<!--End Toast-->
+		<!-- Content-->
+		<div id="more-space">
+			<br>
+		</div>
+		<div class="row"></div>
+		<br>
+    	<br> 
+    	<div id="topico1" class="row" >
+    			<div class="col-6">
+    				<h3 class="title-section">About me</h3>
+    				<p style=" text-align:justify; text-indent: 10px">This section is under construction!<p>
+    			</div>
+    			<div class="col-6">
+    				<p class="center">Photo</p>
+    			</div>
+    		</div>
+    	</div>
     </body>
     <footer>
     	
     </footer>
 </html>
 <script type="text/javascript">
-	
+	var windowsize = $(window).width();
+	$( document ).ready(function() {
+		onload(); //Init
+	});
+
+	function onload(){
+		//Responsive design Init
+		if (windowsize < 768) {
+  			$("#BrandTitle").remove();
+			$("#navigation_menu_small").show();
+			$("#more-space").show();
+			$("#BrandContainer").append("<h5 class=\"title text-light\" id=\"BrandTitle\">Uriel Cedeño</h5>");
+		}
+		else{
+			$("#BrandTitle").remove();
+			$("#BrandContainer").append("<h4 class=\"title text-light\" id=\"BrandTitle\">Uriel Cedeño</h4>");
+			$("#navigation_menu_small").hide();
+			$("#more-space").hide();
+		}
+		//DOOM
+		$("#toasty").hide();
+		$("#toasty-mail").hide();
+	}
+
+	//Responsive desing functions and settings
+	$(window).resize(function() {
+  		windowsize = $(window).width();
+		if (windowsize < 768) {
+  			$("#BrandTitle").remove();
+			$("#BrandContainer").append("<h5 class=\"title text-light\" id=\"BrandTitle\">Uriel Cedeño</h5>");
+			$("#navigation_menu_small").show();
+			$("#more-space").show();
+		}
+		else{
+			$("#BrandTitle").remove();
+			$("#BrandContainer").append("<h4 class=\"title text-light\" id=\"BrandTitle\">Uriel Cedeño</h4>");
+			$("#navigation_menu_small").hide();
+			$("#more-space").hide();
+		}
+	});
 </script>
