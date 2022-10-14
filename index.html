@@ -69,7 +69,7 @@
     				<p style=" text-align:justify; text-indent: 10px">This section is under construction!<p>
     			</div>
     			<div class="col-6">
-    				<p class="center">Photo</p>
+    				<div id="personalImg" class="fig"></div>
     			</div>
     		</div>
     	</div>
@@ -134,8 +134,14 @@
 		//DOOM
 		$("#toasty").hide();
 		$("#toasty-mail").hide();
+		//PersonalPhoto
+		var urlImg="https://mengrez.github.io/Miscelanous/Ph_2_me.jpg"
+		$("#personalImg").css("url("+urlImg+")");
+		//Splash image
 		var urlImg="https://mengrez.github.io/Miscelanous/Ph_1_splash.jpg"
 		$("#splashImg").css("background-image","url("+urlImg+")");
+		//Carousel photos
+		//$("#cardImg").css("background-image","url("+urlImg+")");
 	}
 
 	//Responsive desing functions and settings
