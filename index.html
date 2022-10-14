@@ -64,14 +64,13 @@
 		<br>
     	<br> 
     	<div id="topico1" class="row" >
-    			<div class="col-6">
-    				<h3 class="title-section">About me</h3>
-    				<p style=" text-align:justify; text-indent: 10px">This section is under construction!<p>
-    			</div>
-    			<div class="col-6">
-    				<img id="personalImg" scr="">
-    			</div>
-    		</div>
+			<div class="col-6">
+				<h3 class="title-section">About me</h3>
+				<p style=" text-align:justify; text-indent: 10px">This section is under construction!<p>
+			</div>
+			<div class="col-6">
+				<img id="personalImg" scr="" class="u-center">
+			</div>
     	</div>
     	<!--Splash Image-->
     	<div class="row">
@@ -136,7 +135,7 @@
 		$("#toasty-mail").hide();
 		//PersonalPhoto
 		var urlImg="https://mengrez.github.io/Miscelanous/Ph_2_me.jpg"
-		$("#personalImg").html(text.replace("scr=","scr="+urlImg));
+		$("#personalImg").attr("src", urlImg);
 		//Splash image
 		var urlImg="https://mengrez.github.io/Miscelanous/Ph_1_splash.jpg"
 		$("#splashImg").css("background-image","url("+urlImg+")");

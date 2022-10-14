@@ -38,3 +38,10 @@ h3.title-section{
   color:#94938D; 
   text-indent: 30px;
 }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
