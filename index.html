@@ -69,7 +69,7 @@
     				<p style=" text-align:justify; text-indent: 10px">This section is under construction!<p>
     			</div>
     			<div class="col-6">
-    				<div id="personalImg" class="fig"></div>
+    				<img id="personalImg" scr="">
     			</div>
     		</div>
     	</div>
@@ -136,7 +136,7 @@
 		$("#toasty-mail").hide();
 		//PersonalPhoto
 		var urlImg="https://mengrez.github.io/Miscelanous/Ph_2_me.jpg"
-		$("#personalImg").css("url("+urlImg+")");
+		$("#personalImg").html(text.replace("scr=","scr="+urlImg+));
 		//Splash image
 		var urlImg="https://mengrez.github.io/Miscelanous/Ph_1_splash.jpg"
 		$("#splashImg").css("background-image","url("+urlImg+")");
