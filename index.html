@@ -195,4 +195,36 @@
 			$("#more-space").hide();
 		}
 	});
+	//Scrolling automatic menu large
+	$("#menu1b").click(function (){
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 2000);
+            });
+	$("#menu2b").click(function (){
+                $('html, body').animate({
+                    scrollTop: $("#topico2").offset().top
+                }, 2000);
+            });
+	$("#menu3b").click(function (){
+                $('html, body').animate({
+                    scrollTop: $("#mainfooter").offset().top
+                }, 2000);
+            });
+	//Scrolling automatic menu small
+	$("#menu1a").click(function (){
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 2000);
+            });
+	$("#menu2a").click(function (){
+                $('html, body').animate({
+                    scrollTop: $("#topico2").offset().top
+                }, 2000);
+            });
+	$("#menu3a").click(function (){
+                $('html, body').animate({
+                    scrollTop: $("#mainfooter").offset().top
+                }, 2000);
+            });
 </script>
