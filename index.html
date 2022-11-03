@@ -20,21 +20,26 @@
     </head> 
 
     <body>
-    	<div class="header header-fixed bg-blue-900 u-unselectable header-animated">
+    	<div class="header header-fixed header-dark bg-blue-900 u-unselectable header-animated">
     		<!-- Header de marca-->
 			<div class="header-brand">
 				<div class="nav-item no-hover">
 					<a id="BrandContainer"><h4  id="BrandTitle" class="title text-light">Uriel Cedeño</h4></a>
 				</div>
+
+				<div id="menu_small_icon">
+					<div class="nav-item nav-btn" id="header-btn">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
 			</div>
-			<div id="navigation_menu_small" class="header-brand" >
-				<div id="dropdown" class="nav-item has-sub toggle-hover">
-					<span class="material-icons" style="margin-top: 12px; color: white;">menu</span>
-						<ul class="dropdown-menu dropdown-animated" role="menu" id="drop-small-menu">
-							<li role="menu-item"><a href="#" id="menu1a" class="menuItem">About</a></li>
-							<li role="menu-item"><a href="#" id="menu2a" class="menuItem">Projects</a></li>
-							<li role="menu-item"><a href="#" id="menu3a" class="menuItem">Contact me</a></li>
-						</ul>
+			<div id="menu_small_menu">
+				<div class="header-nav" id="menu_small_dropdown">
+						<div class="nav-item"><a href="#" id="menu1a" class="menuItem">About</a></div>
+						<div class="nav-item"><a href="#" id="menu2a" class="menuItem">Projects</a></div>
+						<div class="nav-item"><a href="#" id="menu3a" class="menuItem">Contact me</a></div>
 				</div>
 			</div>
 			<!-- Menu de pagina-->
@@ -46,7 +51,7 @@
 					<div class="nav-item selected">
 						<a href="#" id="menu2b" class="menuItem">Projects</a>
 					</div>
-					<<div class="nav-item selected">
+					<div class="nav-item selected">
 						<a href="#" id="menu3b" class="menuItem">Contact me</a>
 					</div>
 				</div>
@@ -66,7 +71,7 @@
     	<div id="topico1" class="row" >
 			<div class="col-6">
 				<h3 class="title-section">About me</h3>
-				<p style=" text-align:justify; text-indent: 10px">This section is under construction!<p>
+				<p style=" text-align:justify; text-indent: 10px">There is a myth that mentions we came from corn, I love popcorn... this a message from another dimension, I am there and soon I will back to this plane!<p>
 			</div>
 			<div class="col-6">
 				<img id="personalImg" scr="" class="u-center">
@@ -156,17 +161,21 @@
 	});
 
 	function onload(){
+		//Small menu 
+		$("#icon-menub").hide();
 		//Responsive design Init
 		if (windowsize < 768) {
-  			$("#BrandTitle").remove();
-			$("#navigation_menu_small").show();
+  			//$("#BrandTitle").remove();
+			$("#menu_small_icon").show();
+			$("#menu_small_menu").show();
 			$("#more-space").show();
-			$("#BrandContainer").append("<h5 class=\"title text-light\" id=\"BrandTitle\">Uriel Cedeño</h5>");
+			//$("#BrandContainer").append("<h4 class=\"title text-light\" id=\"BrandTitle\">Uriel Cedeño</h4>");
 		}
 		else{
-			$("#BrandTitle").remove();
-			$("#BrandContainer").append("<h4 class=\"title text-light\" id=\"BrandTitle\">Uriel Cedeño</h4>");
-			$("#navigation_menu_small").hide();
+			//$("#BrandTitle").remove();
+			//$("#BrandContainer").append("<h4 class=\"title text-light\" id=\"BrandTitle\">Uriel Cedeño</h4>");
+			$("#menu_small_icon").hide();
+			$("#menu_small_menu").hide();
 			$("#more-space").hide();
 		}
 		//DOOM
@@ -186,15 +195,17 @@
 	$(window).resize(function() {
   		windowsize = $(window).width();
 		if (windowsize < 768) {
-  			$("#BrandTitle").remove();
-			$("#BrandContainer").append("<h5 class=\"title text-light\" id=\"BrandTitle\">Uriel Cedeño</h5>");
-			$("#navigation_menu_small").show();
+  			//$("#BrandTitle").remove();
+			//$("#BrandContainer").append("<h4 class=\"title text-light\" id=\"BrandTitle\">Uriel Cedeño</h4>");
+			$("#menu_small_icon").show();
+			$("#menu_small_menu").show();
 			$("#more-space").show();
 		}
 		else{
-			$("#BrandTitle").remove();
-			$("#BrandContainer").append("<h4 class=\"title text-light\" id=\"BrandTitle\">Uriel Cedeño</h4>");
-			$("#navigation_menu_small").hide();
+			//$("#BrandTitle").remove();
+			//$("#BrandContainer").append("<h4 class=\"title text-light\" id=\"BrandTitle\">Uriel Cedeño</h4>");
+			$("#menu_small_icon").hide();
+			$("#menu_small_menu").hide();
 			$("#more-space").hide();
 		}
 	});
@@ -216,18 +227,35 @@
             });
 	//Scrolling automatic menu small
 	$("#menu1a").click(function (){
+				$('#menu_small_dropdown').removeClass('active');
+     			$('.nav-btn').removeClass('active');
                 $('html, body').animate({
                     scrollTop: 0
                 }, 2000);
             });
 	$("#menu2a").click(function (){
+				$('#menu_small_dropdown').removeClass('active');
+     			$('.nav-btn').removeClass('active');
                 $('html, body').animate({
                     scrollTop: $("#topico2").offset().top
                 }, 2000);
             });
 	$("#menu3a").click(function (){
+				$('#menu_small_dropdown').removeClass('active');
+     			$('.nav-btn').removeClass('active');
                 $('html, body').animate({
                     scrollTop: $("#mainfooter").offset().top
                 }, 2000);
             });
+
+	$('#header-btn').on('click', function(e) {
+    	$('#menu_small_dropdown').toggleClass('active');
+   	 	$('.nav-btn').toggleClass('active');
+	});
+
+	$('.dropdown-menu li').on('click', function(e) {
+     	$('#menu_small_dropdown').removeClass('active');
+     	$('.nav-btn').removeClass('active');
+	});
+
 </script>
